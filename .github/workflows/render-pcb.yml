@@ -18,7 +18,7 @@ jobs:
       - name: Render PCB image
         uses: linalinn/kicad-render@main
         with:
-          pcb_file: hardware/meteo-station/meteo-station.kicad_pcb
+          pcb_file: esp_lights_on.kicad_pcb
           output_path: ${{ github.workspace }}/images
 
       - name: Commit rendered images
