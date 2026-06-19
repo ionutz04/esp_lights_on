@@ -1,0 +1,30 @@
+name: Render PCB
+
+on:
+  push:
+    paths:
+      - '**.kicad_pcb'
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Render PCB image
+        uses: linalinn/kicad-render@main
+        with:
+          pcb_file: hardware/meteo-station/meteo-station.kicad_pcb
+          output_path: ${{ github.workspace }}/images
+
+      - name: Commit rendered images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add images/
+          git diff --staged --quiet || git commit -m "chore: actualizare randare PCB [skip ci]"
+          git push
