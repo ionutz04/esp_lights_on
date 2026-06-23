@@ -5436,7 +5436,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Relay_THT:Relay_SPST_Panasonic_ADW11"
+		(property "Footprint" "RELAYs:0JT-SS-105LM"
 			(at 45.72 146.05 0)
 			(hide yes)
 			(show_name no)
@@ -7445,7 +7445,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Relay_THT:Relay_SPST_Panasonic_ADW11"
+		(property "Footprint" "RELAYs:0JT-SS-105LM"
 			(at 95.25 148.59 0)
 			(hide yes)
 			(show_name no)
